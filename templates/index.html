@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Virtual Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector('form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const userInput = document.querySelector('input[name="user_input"]').value;
+
+                fetch('/webhook', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ message: userInput })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    let responseDiv = document.querySelector('.response');
+                    if (data.response) {
+                        responseDiv.innerHTML = `<p>${data.response}</p>`;
+                    } else {
+                        responseDiv.innerHTML = `<p>Error: ${data.error}</p>`;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    let responseDiv = document.querySelector('.response');
+                    responseDiv.innerHTML = `<p>An error occurred</p>`;
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>AI-Powered Virtual Assistant</h1>
+        <form action="/webhook" method="POST">
+            <input type="text" name="user_input" placeholder="Ask me anything..." required>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="response"></div>
+    </div>
+</body>
+</html>

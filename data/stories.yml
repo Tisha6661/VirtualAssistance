@@ -1,0 +1,26 @@
+version: "2.0"
+stories:
+  - story: greet user
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - story: goodbye user
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: get weather
+    steps:
+      - intent: get_weather
+      - action: utter_get_weather
+
+  - story: send email
+    steps:
+      - intent: send_email
+      - action: utter_send_email
+
+  - story: set reminder
+    steps:
+      - intent: set_reminder
+      - action: utter_set_reminder

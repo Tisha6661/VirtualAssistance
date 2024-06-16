@@ -1,0 +1,21 @@
+version: "2.0"
+rules:
+- rule: Say hello
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Set reminder
+  steps:
+  - intent: set_reminder
+  - action: utter_set_reminder
+
+- rule: Send email
+  steps:
+  - intent: send_email
+  - action: utter_send_email
+
+- rule: Get weather
+  steps:
+  - intent: get_weather
+  - action: utter_get_weather

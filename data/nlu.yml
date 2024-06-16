@@ -1,0 +1,42 @@
+version: "2.0"
+nlu:
+  - intent: greet
+    examples: |
+      - hello
+      - hi
+      - hey
+      - good morning
+      - good evening
+      - hey there
+
+  - intent: goodbye
+    examples: |
+      - goodbye
+      - see you later
+      - bye
+      - take care
+
+  - intent: get_weather
+    examples: |
+      - what's the weather like?
+      - tell me the weather
+      - weather update
+      - will it rain tomorrow?
+
+  - intent: send_email
+    examples: |
+      - send an email
+      - I need to send an email
+      - email someone
+
+  - intent: set_reminder
+    examples: |
+      - set a reminder
+      - remind me to
+      - I need a reminder
+
+  - intent: inform
+    examples: |
+      - The location is [New York](location)
+      - at [3 PM](time)
+      - on [Monday](date)

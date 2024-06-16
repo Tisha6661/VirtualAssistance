@@ -1,0 +1,18 @@
+nlu:
+- intent: set_reminder
+  examples: |
+    - set a reminder
+    - remind me to [buy milk](item)
+    - set a reminder for [10 am](time)
+
+- intent: send_email
+  examples: |
+    - send an email
+    - email [John](name)
+    - send an email to [Alice](name)
+
+- intent: get_weather
+  examples: |
+    - what's the weather in [New York](city)
+    - weather in [San Francisco](city)
+    - tell me the weather in [London](city)

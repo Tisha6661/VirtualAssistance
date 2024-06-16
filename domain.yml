@@ -1,0 +1,53 @@
+intents:
+  - greet
+  - goodbye
+  - inform
+  - get_weather
+  - send_email
+  - set_reminder
+
+entities:
+  - location
+  - time
+  - date
+  - task
+
+slots:
+  location:
+    type: text
+  time:
+    type: text
+  date:
+    type: text
+
+responses:
+  utter_greet:
+    - text: "Hello! How can I assist you today?"
+  utter_goodbye:
+    - text: "Goodbye! Have a great day!"
+  utter_ask_location:
+    - text: "Could you please provide the location?"
+  utter_ask_time:
+    - text: "Could you please provide the time?"
+  utter_ask_date:
+    - text: "Could you please provide the date?"
+  utter_get_weather:
+    - text: "Sure, I can provide the weather updates. Please wait a moment."
+  utter_send_email:
+    - text: "I can help with sending an email. Who would you like to send it to?"
+  utter_set_reminder:
+    - text: "I can set a reminder for you. What would you like to be reminded about?"
+
+actions:
+  - utter_greet
+  - utter_goodbye
+  - utter_ask_location
+  - utter_ask_time
+  - utter_ask_date
+  - utter_get_weather
+  - utter_send_email
+  - utter_set_reminder
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
